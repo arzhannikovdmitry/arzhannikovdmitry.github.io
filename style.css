@@ -1,6 +1,655 @@
+@charset "utf-8";
+
 *{
 	margin: 0;
 	padding: 0;
- }
+	outline: none;
+}
+body {
+  	min-height: 100vh;
+  	display: flex;
+  	flex-direction: column;
+	width: 100%;
+	background-color : #fff;
+	color: #333;
+	font-family: "Segoe UI", Arial, sans-serif;
+	font-size: 0.9em;
+	line-height: 135%;
+}
 
+/*анимация*/
+#img
+{
+	width: 65px;
+	height: 65px;
+	border-radius: 30px;
+}
+.jaba
+{
+	display: flex;
+	justify-content: center;
+	margin-top: 10px;
+	width: 100%;
+	height: 360px;
+}
+.square{
+	position: absolute;
+	margin-left: -125px;
+	margin-top: 35px;
+	animation-name: anyname;			/*имя анимации*/
+	animation-duration: 2s;				/*длительность*/
+	animation-timing-function: ease-out;/*замедление в конце*/
+	animation-iteration-count: infinite;/*бесконечная анимация*/
+	animation-delay: 1s;				/*задержка перед началом*/
+	animation-direction: reverse;		/*обратное направление*/
+	animation: anyname 2s ease-out infinite 1s reverse;/*сокращённо*/
+}
+.square2{
+	margin-top: 35px;
+	margin-left: -40px;
+	position: absolute;
+	animation-name: anyname;			/*имя анимации*/
+	animation-duration: 2s;				/*длительность*/
+	animation-timing-function: ease-out;/*замедление в конце*/
+	animation-iteration-count: infinite;/*бесконечная анимация*/
+	animation-delay: 2s;				/*задержка перед началом*/
+	animation-direction: reverse;		/*обратное направление*/
+	animation: anyname 2s ease-out infinite 1s reverse;/*сокращённо*/
+}
+.square:hover{
+	animation-play-state: paused;		/*действие при наведении*/
+}
+
+
+@keyframes anyname{
+	0%{
+		transform: rotate(0deg);
+	}
+	100%{
+		transform: rotate(360deg);
+	}
+}
+
+.pop_up
+{
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+
+}
+.square_up{
+	width: 50px;
+	height: 50px;
+	background-color: #333;
+	margin-left: 10px;
+	margin-top: 20px;
+	border-radius: 30px;
+	border: 2px solid silver;
+	animation-name: pop_up;			/*имя анимации*/
+	animation-duration: 4s;				/*длительность*/
+	animation-timing-function: ease-out;/*замедление в конце*/
+	animation-iteration-count: infinite;/*бесконечная анимация*/
+	animation-direction: reverse;		/*обратное направление*/
+	margin-bottom: 10px;
+}
+
+#img1 
+{
+	animation-delay: 1s;				/*задержка перед началом*/
+}
+
+#img2
+{
+	animation-delay: 1.5s;				/*задержка перед началом*/
+}
+
+#img3
+{
+	animation-delay: 2s;				/*задержка перед началом*/
+}
+
+@keyframes pop_up{
+	0%{
+		background-color: #333;
+	}
+	50%
+	{
+		background-color: #fff;
+	}
+	100%{
+		background-color: #333;
+	}
+}
+
+
+.field
+{margin-top: 20px;
+	margin-left: 10px;
+	border:2px solid silver;
+	border-radius: 15px;
+	width: 190px;
+	height: 60px;
+	margin-bottom: 10px;
+}
+
+.roll_ball{
+	margin-top: 3px;
+	background-color: #77F9D2;
+	border:2px solid silver;
+	border-radius: 50px;
+	width: 50px;
+	height: 50px;
+	animation-name: slide;
+	animation-duration: 4s;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
+	animation-delay: 1s;
+	
+}
+
+  @keyframes slide{
+	0%{
+		margin-left: 0;
+	}
+	50%{
+		margin-left: 70%;
+	}
+	100%
+	{
+		margin-left: 0;
+	}
+}
+
+.field2
+
+{
+	width: 250px;
+	height: 60px;
+	border: 2px solid silver;
+	background: #999;
+	border-radius: 7px;
+	overflow: hidden;
+	margin-top: 20px;
+	margin-left: 10px;
+	margin-bottom: 10px;
+}
+
+.inner{
+	height: 60px;
+	width: 500px;
+	background: repeating-linear-gradient(40deg, #fff 0px, #fff 5px, #77F9D2 5px, #77F9D2 10px);
+	animation: dowl 5s linear infinite;
+}
+.inner:hover{
+	animation-play-state: paused;		/*действие при наведении*/
+}
+
+@keyframes dowl {
+	0%{
+		margin-left: 0;
+	}
+	100%{
+		margin-left: -100%;
+	}
+}
+/*Вкладки*/
+.tabs {
+
+ margin: 10px;
+  width: 700px;
+}
+
+.tabs input {
+
+  opacity: 0;
+  cursor: pointer;
+}
+
+.tabs label {
+
+  	background: #4477CC;
+  	color: #fefefe;
+  	font-size: 15px;
+  	line-height: 40px;
+  	height: 40px;
+  	width: 70px;
+	 float: left;
+  	font-weight: bold;
+ 	text-align: center;
+}
+
+.tabs label:hover {
+  cursor: pointer;
+}
+
+.tabs input:hover + label {
+  background: #FF6600;
+}
+
+.tabs input:checked + label {
+  background: silver;
+  color:#77F9D2;
+}
+
+.content {
+
+  border: 2px solid silver;
+  height: auto;
+  width: 80%;
+  position: relative;
+  background: #fefefe;
+  left: -13px;
+  box-sizing: border-box;
+}
+
+.content div {
+  position: relative;
+  float: left;
+  width: 0; height: 0;
+  box-sizing: border-box;
+  top: 0; left: 0;
+  opacity: 0;
+  background: #fefefe;
+}
+
+.content div h2 {
+  margin-top: 0;
+}
+
+.tabs .tab-selector-1:checked ~ .content .content-1,
+.tabs .tab-selector-2:checked ~ .content .content-2,
+.tabs .tab-selector-3:checked ~ .content .content-3 {
+  opacity: 1;
+  width: 100%;
+  height: auto;
+  padding: 7%;
+}
+
+.content div p {
+  line-height: 22px;
+  text-align: left;
+  margin: 0;
+  color: #777;
+}
+
+/*cлайдер*/
+
+.slider {
+  position: relative;
+  width: 680px;
+  margin: 50px auto;
+  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.75);
+}
+
+.slider input[name="switch"] {
+  display: none;
+}
+
+.switch {
+  position: absolute;
+  left: 0;
+  bottom: -40px;
+  text-align: center;
+  width: 100%;
+}
+
+.switch label {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+   margin: 0 3px;
+  border: 3px solid silver;
+  border-radius: 10px;
+}
+
+#btn1:checked~.switch label[for="btn1"] {
+  border: 3px solid #77F9D2;
+}
+
+#btn2:checked~.switch label[for="btn2"] {
+   border: 3px solid #77F9D2;
+}
+
+#btn3:checked~.switch label[for="btn3"] {
+  border: 3px solid #77F9D2;
+}
+
+.slider-inner {
+  overflow: hidden;
+}
+
+.slides {
+  width: 300%;
+}
+
+.slides img {
+  width: 680px;
+  height: 340px;
+  float: left;
+}
+
+#btn1:checked~slider-inner slides {
+  transform: translate(0);
+}
+
+#btn2:checked~.slider-inner .slides {
+  transform: translate(-680px);
+}
+
+#btn3:checked~.slider-inner .slides {
+  transform: translate(-1360px);
+}
+
+/*Стили для header*/
+.header a {
+	padding-top: 5px;
+	padding-bottom: 5px;
+  	color: #e74c3c;
+  	position: relative;
+  	font-weight: 600;
+  	height: 22px;
+  	display: inline-block;
+  	text-decoration: none;
+  	-webkit-transition: all .3s linear;
+  	-moz-transition: all .3s linear;
+  	transition: all .3s linear;
+}
+.header a:hover{	/*цвет при наведении*/
+  color: #222;
+}
+.header a:before, .header a:after{	/*полоски сверху и снизу*/
+  content: '';
+  background: #e74c3c;
+  position: absolute;
+  width: 0;
+  height: 2px;
+  -webkit-transition: all .3s linear;
+  -moz-transition: all .3s linear;
+  transition: all .3s linear;
+}
+.header a:before{
+  top: 0;
+  left: 0;
+}
+.header a:after{
+  top: 100%;
+  right: 0;
+}
+.header a:hover:before, .header a:hover:after{
+  width: 100%;
+}
+div.header
+{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	height: 60px;
+	padding: 0.5%;
+	background-color: #fafafa;
+	border-bottom: 2px solid silver;
+}
+div.logo
+{  margin-left: 2%;
+	width: 15%;
+	color: #939393;
+	font-size: 1.3em;
+	font-family: 'Open Sans', sans-serif;
+	padding: 3px;
+	display: flex;
+	justify-content: center;
+}
+div.site_name 
+{
+	width: 40%;
+	color: #939393;
+	font-size: 1.3em;
+	font-family: 'Open Sans', sans-serif;
+	padding: 3px;
+	display: flex;
+	justify-content: center;
+	align-self: center;
+}
+
+
+.site_name p
+{
+	border-left: 2px solid black;
+	float: left;
+	padding: 5px;
+	margin-bottom: 5px;
+}
+.logo-item 
+{
+	align-self: center;
+}
+/*------------------------------------------*/
+/*Стили главного меню*/
+nav {
+	margin: 5px auto;
+	width: 850px;
+	height: 45px;
+}
+.topnav
+{
+	background-color: #fff;
+	font-size: 14px;
+	margin-top: 10px; 
+	margin-bottom: 10px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+.topnav a
+{
+	color: #000;
+	text-align: center;
+	padding: 12px 15px;
+	font-size: 15px;
+	text-decoration: none;
+}
+.topnav a:hover {
+border-bottom: 2px solid  #e74c3c;
+}
+/*------------------------------------------*/
+.clear {
+	clear: both;
+}
+/*Стили для content*/
+div.content{
+	flex-grow:1;
+	padding: 5px;
+	/*border: 1px solid black;*/
+	display: inline-block;
+	margin-left: 2%;
+	margin-right: 2%;
+	width: 95%;
+}
+div.leftblock{
+	padding: 5px;
+	display: inline-block;
+	float: left;
+	width: 19%;
+	height: 250px;
+	margin-right: 5px;
+	border: 1px solid black;}
+
+	ul li {
+		display: inline-block;
+		margin-right: 5px;
+		border-right: 1px solid black;
+		padding : 5px ;
+		cursor: pointer;
+
+		}
+
+	ul li :hover{
+transition: 1s;
+		background: #46394b;
+	}
+
+.wrapper
+{
+	width: 53%;
+	margin: 5px auto;
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1; 
+	/*background: #95a3b3;*/
+}
+div.container
+{
+
+  width: 75%;
+  display: flex;
+  flex-direction: row;
+justify-content: center;
+  margin: 3px auto;
+  padding: 3px;
+  flex-wrap: wrap;
+  background-color: #fafafa;
+  border: 2px solid silver;
+  border-radius: 5px;
+}
+
+/*Списки*/
+div.list
+{
+
+}
+
+li {
+	list-style-type: none;
+}
+
+ol {
+	counter-reset: list1 0;
+}
+
+li ol {
+	margin-left: 15px;
+}
+
+ol li:before {
+	counter-increment: list1;
+	content: counter(list1) ". ";
+}
+
+ol ol {
+	counter-reset: list2;
+}
+
+ol ol li:before {
+	counter-increment: list2;
+	content: counter(list1) "." counter(list2) ". ";
+}
+ ol ol li:hover{
+  background: #cacafc;
+}
+
+
+/*Табличка*/
+
+th {
+  font-size: 13px;
+  font-weight: bold;
+  background: #cadafd;
+  border-top: 4px solid #aabcfe;
+  border-bottom: 1px solid #fff;
+  color: #121258;
+  padding: 8px;
+}
+td {
+  background: #e8edff;
+  border-bottom: 2px solid #fff;
+  color: #121258;
+  border-top: 1px solid transparent;
+  padding: 8px;
+}
+tr:hover td {
+  background: #cacafc;
+}
+
+
+
+
+/* Стили для footer*/
+div.footer
+{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding : 5px 1% 1%;
+	margin-top: 10px;
+	height: 95px;
+	background-color: #fafafa;
+	border-top: 2px solid silver;
+}
+div.social 
+{
+display: flex;
+flex-direction: column;
+font-size: 1em
+}
+.social p
+{
+	border-left: 2px solid black;
+	float: left;
+	color: #939393;
+	font-size: 1.3em;
+	font-family: 'Open Sans', sans-serif;
+	padding: 5px;
+	margin-bottom: 5px;
+}
+
+div.rights
+{
+	color: #939393;
+	font-size: 1.2em;
+	font-family: 'Open Sans', sans-serif;
+	padding: 5px;
+	margin-bottom: 5px;
+	height: 20px;
+}
+.footer a {
+	padding-top: 5px;
+	padding-bottom: 5px;
+  	color: #e74c3c;
+  	position: relative;
+  	font-weight: 600;
+  	display: inline-block;
+  	text-decoration: none;
+  	-webkit-transition: all .3s linear;
+  	-moz-transition: all .3s linear;
+  	transition: all .3s linear;
+}
+
+.footer a:hover{
+  color: #222;
+}
+
+.footer a:before, .footer a:after{
+  content: '';
+  background: #e74c3c;
+  position: absolute;
+  width: 0;
+  height: 2px;
+  -webkit-transition: all .3s linear;
+  -moz-transition: all .3s linear;
+  transition: all .3s linear;
+}
+
+.footer a:before{
+  top: 0;
+  left: 0;
+}
+
+.footer a:after{
+  top: 100%;
+  right: 0;
+}
+
+.footer a:hover:before, .footer a:hover:after{
+  width: 100%;
+}
 
