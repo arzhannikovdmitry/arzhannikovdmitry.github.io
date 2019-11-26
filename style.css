@@ -17,6 +17,14 @@ body {
 	line-height: 135%;
 }
 
+table
+{
+    width: 90%;
+    border: 2px solid #4B5563;
+    text-align: center;
+    border-collapse: collapse;	
+}
+
 hr {
 
 	margin: 5px 25% ;
