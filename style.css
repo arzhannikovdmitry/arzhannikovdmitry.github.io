@@ -155,6 +155,17 @@ div.content{
   border: 2px solid #4B5563;
   border-radius: 10px;
 }
+.img_container
+{
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  margin: 3px auto;
+  padding: 5px;
+  flex-wrap: wrap;
+  border: 2px solid white;
+  border-radius: 10px;
+}
 
 .lead
 {
