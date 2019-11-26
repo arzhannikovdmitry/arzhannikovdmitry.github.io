@@ -163,8 +163,6 @@ div.content{
   margin: 3px auto;
   padding: 5px;
   flex-wrap: wrap;
-  border: 2px solid white;
-  border-radius: 10px;
 }
 
 .lead
